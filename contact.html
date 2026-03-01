@@ -118,7 +118,7 @@
 
           <div class="qr">
             <div class="qr__code" aria-label="QR code">
-              <canvas id="qrCanvas" width="220" height="220"></canvas>
+              <div id="qrcode"></div>
             </div>
             <div class="qr__info">
               <div class="qr__title">Fastest response</div>
@@ -149,30 +149,28 @@
       </footer>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script>
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-      (async () => {
-        const canvas = document.getElementById('qrCanvas');
-        if (!canvas || !window.QRCode) return;
+     document.addEventListener("DOMContentLoaded", () => {
+  if (typeof window.QRCode === "undefined") return;
 
-        const url = 'https://wa.me/13232176474';
-        try {
-          await window.QRCode.toCanvas(canvas, url, {
-            margin: 1,
-            width: 220,
-            color: {
-              dark: '#ffffff',
-              light: 'transparent',
-            },
-          });
-        } catch {
-          // ignore
-        }
-      })();
+  const el = document.getElementById("qrcode");
+  if (!el) return;
 
+  el.innerHTML = "";
+
+  new QRCode(el, {
+    text: "https://wa.me/13232176474",
+    width: 220,
+    height: 220,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+});
       const form = document.getElementById('bookingForm');
       if (form) {
         form.addEventListener('submit', (e) => {
