@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reviews — Alex Private Rides." />
+    <title>Reviews — Alex Private Rides</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="topbar" aria-label="Top contact bar">
+      <div class="container topbar__inner">
+        <div class="topbar__left">
+          <a href="tel:+13232176474">323 217 6474</a>
+          <span class="topbar__dot" aria-hidden="true">•</span>
+          <a href="mailto:Alexme06@yahoo.com">Alexme06@yahoo.com</a>
+        </div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html" aria-label="Alex Private Rides home">
+          <span class="brand__mark" aria-hidden="true">A</span>
+          <span class="brand__text">
+            <span class="brand__name">Alex Ride Service</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="rates.html">Rates</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="reviews" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h1 class="section__title">What riders say</h1>
+            <p class="section__sub">A few words from repeat customers.</p>
+          </div>
+
+          <div class="reviews">
+            <figure class="review">
+              <blockquote class="review__quote">“Super punctual and the car was spotless. Made my early flight stress-free.”</blockquote>
+              <figcaption class="review__by">— Jamie</figcaption>
+            </figure>
+            <figure class="review">
+              <blockquote class="review__quote">“Fast replies, fair price, and a smooth ride. I’ll book again.”</blockquote>
+              <figcaption class="review__by">— Morgan</figcaption>
+            </figure>
+            <figure class="review">
+              <blockquote class="review__quote">“Professional and friendly. Exactly what I want from a private driver.”</blockquote>
+              <figcaption class="review__by">— Taylor</figcaption>
+            </figure>
+          </div>
+
+          <div class="contact" style="margin-top: 18px">
+            <a class="btn btn--primary" href="contact.html">Request a ride</a>
+            <a class="btn btn--ghost" href="sms:+13232176474">Text</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__left">
+            <div class="footer__brand">Alex Private Rides</div>
+            <div class="footer__small">© <span id="year"></span> Alex. All rights reserved.</div>
+          </div>
+          <div class="footer__right">
+            <a href="tel:+13232176474">Call</a>
+            <a href="sms:+13232176474">Text</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Book</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
